@@ -1,4 +1,4 @@
 function page() {
-  return <div>page</div>;
+  return <div>About wild oasis page</div>;
 }
 export default page;
