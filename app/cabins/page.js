@@ -16,7 +16,7 @@ async function Page() {
         ))}
       </ul>
 
-      <Counter />
+      <Counter users={data} />
     </div>
   );
 }
