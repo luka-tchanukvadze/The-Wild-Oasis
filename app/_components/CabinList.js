@@ -2,9 +2,7 @@ import { getCabins } from "../_lib/data-service";
 import CabinCard from "./CabinCard";
 
 async function CabinList() {
-  console.log("starting");
   const cabins = await getCabins();
-  console.log(cabins);
 
   if (!cabins.length) return null;
 
