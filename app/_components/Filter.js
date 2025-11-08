@@ -8,6 +8,8 @@ function Filter() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const activeFilter = searchParams.get("capacity") ?? "all";
+
   function handleFilter(filter) {
     const params = new URLSearchParams(searchParams);
     params.set("capacity", filter);
@@ -16,34 +18,60 @@ function Filter() {
 
   return (
     <div className="border border-primary-800 flex">
-      <button
-        className="px-5 py-2 hover:bg-primary-700"
-        onClick={() => handleFilter("all")}
+      <Button
+        filter={"all"}
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         All cabins
-      </button>
+      </Button>
 
-      <button
-        className="px-5 py-2 hover:bg-primary-700"
-        onClick={() => handleFilter("small")}
+      <Button
+        filter={"small"}
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         1 to 3 guests
-      </button>
+      </Button>
 
-      <button
-        className="px-5 py-2 hover:bg-primary-700"
-        onClick={() => handleFilter("medium")}
+      <Button
+        filter={"large"}
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
-        r to 7 guests
-      </button>
+        4 to 7 guests
+      </Button>
 
-      <button
-        className="px-5 py-2 hover:bg-primary-700"
-        onClick={() => handleFilter("large")}
+      <Button
+        filter={"large"}
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
       >
         8 to 12 guests
-      </button>
+      </Button>
+
+      <Button
+        filter={"large"}
+        handleFilter={handleFilter}
+        activeFilter={activeFilter}
+      >
+        8 to 12 guests
+      </Button>
     </div>
   );
 }
+
+function Button({ children, filter, handleFilter, activeFilter }) {
+  return (
+    <button
+      className={`px-5 py-2 hover:bg-primary-700 ${
+        filter === activeFilter ? "bg-primary-700 text-primary-50" : ""
+      }`}
+      onClick={() => handleFilter(filter)}
+    >
+      {children}
+    </button>
+  );
+}
+
 export default Filter;
