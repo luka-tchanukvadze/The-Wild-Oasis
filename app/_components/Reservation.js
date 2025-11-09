@@ -2,10 +2,10 @@ import { getBookedDatesByCabinId, getSettings } from "../_lib/data-service";
 import DateSelector from "./DateSelector";
 import ReservationForm from "./ReservationForm";
 
-async function Reservation({ params }) {
-  const [settings, bookedDates] = Promise.all([
+async function Reservation({ cabin }) {
+  const [settings, bookedDates] = await Promise.all([
     getSettings(),
-    getBookedDatesByCabinId(params.cabinId),
+    getBookedDatesByCabinId(cabin.id),
   ]);
 
   return (

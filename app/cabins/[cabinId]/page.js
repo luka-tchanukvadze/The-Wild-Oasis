@@ -78,7 +78,7 @@ export default async function Page({ params }) {
           Reserve {name} today. Pay on arrival.
         </h2>
 
-        <Reservation />
+        <Reservation cabin={cabin} />
       </div>
     </div>
   );
