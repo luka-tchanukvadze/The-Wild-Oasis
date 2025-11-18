@@ -27,6 +27,23 @@ export async function updateGuest(formData) {
   revalidatePath("/account/profile");
 }
 
+export async function updateReservation(bookingId) {
+  const session = await auth();
+  if (!session) throw new Error("You must be logged in");
+
+  const { data, error } = await supabase
+    .from("bookings")
+    .update(updatedFields)
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Booking could not be updated");
+  }
+}
+
 export async function deleteReservation(bookingId) {
   const session = await auth();
   if (!session) throw new Error("You must be logged in");
