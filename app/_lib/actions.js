@@ -26,7 +26,7 @@ export async function updateGuest(formData) {
   revalidatePath("/account/profile");
 }
 
-export async function DeleteReservation(bookingId) {
+export async function deleteReservation(bookingId) {
   const session = await auth();
   if (!session) throw new Error("You must be logged in");
 
@@ -36,6 +36,8 @@ export async function DeleteReservation(bookingId) {
     .eq("id", bookingId);
 
   if (error) throw new Error("Booking could not be deleted");
+
+  revalidatePath("/account/reservations");
 }
 
 export async function signInAction() {
