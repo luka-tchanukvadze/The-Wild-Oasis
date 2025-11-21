@@ -1,5 +1,22 @@
 https://the-wild-oasis-two-ivory.vercel.app/
 
+##Main Tech Stack
+
+## 🛠 Tech Stack
+
+### 1) The Wild Oasis - Internal Tool (Admin Dashboard)
+- React.js  
+- TanStack React Query  
+- Supabase  
+- React Hook Form  
+- React Router  
+- Styled Components  
+
+### 2) The Wild Oasis - Customer Website
+- Next.js (SSR + CSR - static & dynamic pages)  
+- Supabase  
+- NextAuth.js  
+- Tailwind CSS
 
 
 <a href="https://github.com/user-attachments/assets/2d5b6170-9d2a-4d80-b511-4c783b539dc3">
