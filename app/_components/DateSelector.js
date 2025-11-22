@@ -34,9 +34,9 @@ function DateSelector({ settings, cabin, bookedDates }) {
   const { minBookingLength, maxBookingLength } = settings;
 
   return (
-    <div className="flex flex-col justify-between overflow-auto ">
+    <div className="flex flex-col justify-between">
       <DayPicker
-        className="pt-12 place-self-center"
+        className="pt-12 place-self-center scale-[0.65] md:scale-[0.90] sm:scale-[0.75] xl:scale-100"
         mode="range"
         onSelect={setRange}
         selected={displayRange}
