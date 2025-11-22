@@ -24,8 +24,8 @@ function ReservationCard({ booking, onDelete }) {
   } = booking;
 
   return (
-    <div className="flex border border-primary-800">
-      <div className="relative h-32 aspect-square">
+    <div className="flex flex-col scroll-auto border border-primary-800 xl:flex-row">
+      <div className="relative h-20 w-20 aspect-square xl:h-32 xl:w-32">
         <Image
           src={image}
           alt={`Cabin ${name}`}
@@ -34,23 +34,23 @@ function ReservationCard({ booking, onDelete }) {
         />
       </div>
 
-      <div className="flex-grow px-6 py-3 flex flex-col">
+      <div className="flex-grow px-0 py-3 flex flex-col xl:px-6">
         <div className="flex items-center justify-between">
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-sm font-semibold xl:text-xl">
             {numNights} nights in Cabin {name}
           </h3>
           {isPast(new Date(startDate)) ? (
-            <span className="bg-yellow-800 text-yellow-200 h-7 px-3 uppercase text-xs font-bold flex items-center rounded-sm">
+            <span className="bg-yellow-800 text-yellow-200 h-7 px-3 uppercase text-sm font-bold flex items-center rounded-sm xl:text-xs">
               past
             </span>
           ) : (
-            <span className="bg-green-800 text-green-200 h-7 px-3 uppercase text-xs font-bold flex items-center rounded-sm">
+            <span className="bg-green-800 text-green-200 h-7 px-3 uppercase text-sm font-bold flex items-center rounded-sm xl:text-xs">
               upcoming
             </span>
           )}
         </div>
 
-        <p className="text-lg text-primary-300">
+        <p className="text-sm text-primary-300 xl:text-lg">
           {format(new Date(startDate), "EEE, MMM dd yyyy")} (
           {isToday(new Date(startDate))
             ? "Today"
@@ -59,9 +59,11 @@ function ReservationCard({ booking, onDelete }) {
         </p>
 
         <div className="flex gap-5 mt-auto items-baseline">
-          <p className="text-xl font-semibold text-accent-400">${totalPrice}</p>
+          <p className="text-sm font-semibold text-accent-400 xl:text-xl">
+            ${totalPrice}
+          </p>
           <p className="text-primary-300">&bull;</p>
-          <p className="text-lg text-primary-300">
+          <p className="text-sm text-primary-300 xl:text-xl">
             {numGuests} guest{numGuests > 1 && "s"}
           </p>
           <p className="ml-auto text-sm text-primary-400">
@@ -75,7 +77,7 @@ function ReservationCard({ booking, onDelete }) {
           <>
             <Link
               href={`/account/reservations/edit/${id}`}
-              className="group flex items-center gap-2 uppercase text-xs font-bold text-primary-300 border-b border-primary-800 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900"
+              className="group flex items-center gap-2 uppercase text-sm font-bold text-primary-300 border-b border-primary-800 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900"
             >
               <PencilSquareIcon className="h-5 w-5 text-primary-600 group-hover:text-primary-800 transition-colors" />
               <span className="mt-1">Edit</span>

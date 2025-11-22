@@ -9,7 +9,7 @@ async function page() {
   const firstName = session.user.name.split(" ").at(0);
 
   return (
-    <h2 className="font-semibold text-2xl text-accent-400 mb-7">
+    <h2 className="font-semibold text-xl text-accent-400 mb-7 sm:text-2xl">
       Welcome, {firstName}! Have fun exploring.
     </h2>
   );

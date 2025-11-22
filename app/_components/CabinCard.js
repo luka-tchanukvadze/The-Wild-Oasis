@@ -17,7 +17,7 @@ function CabinCard({ cabin }) {
       </div>
 
       <div className="flex-grow">
-        <div className="pt-5 pb-4 px-7 bg-primary-950">
+        <div className="pt-5 pb-4 px-2 bg-primary-950 sm:px-7">
           <h3 className="text-accent-500 font-semibold text-2xl mb-3">
             Cabin {name}
           </h3>
